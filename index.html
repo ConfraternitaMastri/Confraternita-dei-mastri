@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Confraternita dei Mastri, la gilda italiana più importante su Pax Dei, Server Tyr. Attivi in PvP, PvE, costruzione e crafting. Unisciti a noi.">
+  <meta name="keywords" content="gilda italiana pax dei, clan italiano pax dei, server tyr, confraternita dei mastri, pax dei italia, gilda pax dei tyr, pax dei gilda, pax dei clan, pax dei italiano, lyonesse pvp, camlan shrine, roccamastra">
+  <meta property="og:title" content="Confraternita dei Mastri, Gilda Italiana Pax Dei">
+  <meta property="og:description" content="La gilda italiana più importante sul Server Tyr di Pax Dei. PvP, PvE, costruzione, crafting. Exules Eligimus Eximus.">
+  <meta property="og:type" content="website">
+  <title>Confraternita dei Mastri, Gilda Italiana Pax Dei · Server Tyr</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+    :root {
+      --green-dark:   #0e1a0d;
+      --green-mid:    #1a2d18;
+      --green-panel:  #1f3320;
+      --green-accent: #4a7a42;
+      --green-muted:  #3d5e38;
+      --bronze:       #a07535;
+      --bronze-light: #c9a04a;
+      --bronze-bright:#e6c060;
+      --parchment:    #e8d9b5;
+      --parchment-dim:#b8a880;
+      --copper:       #7a5228;
+      --border:       rgba(160,117,53,.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', serif;
+      background: var(--green-dark);
+      color: var(--parchment);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='none'/%3E%3Ccircle cx='1' cy='1' r='.4' fill='%23ffffff' opacity='.015'/%3E%3Ccircle cx='3' cy='3' r='.4' fill='%23ffffff' opacity='.015'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 80px;
+      position: relative;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 0%, #1e3d1a 0%, transparent 65%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, #0a1509 0%, transparent 60%),
+        var(--green-dark);
+      z-index: 1;
+    }
+
+    /* ── CORNER ORNAMENTS ── */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(160,117,53,.15);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    /* ── LOGO ── */
+    .logo-wrap {
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .logo-wrap img {
+      width: clamp(150px, 22vw, 240px);
+      filter: drop-shadow(0 4px 32px rgba(100,150,80,.3)) drop-shadow(0 0 8px rgba(160,117,53,.2));
+      transition: filter .4s;
+    }
+    .logo-wrap img:hover {
+      filter: drop-shadow(0 4px 40px rgba(100,150,80,.5)) drop-shadow(0 0 16px rgba(160,117,53,.4));
+    }
+
+    /* ── HEADER TEXT ── */
+    .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(9px, 1.3vw, 12px);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--bronze-light);
+      opacity: .7;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(26px, 5.5vw, 58px);
+      font-weight: 700;
+      color: var(--bronze-bright);
+      line-height: 1.1;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 40px rgba(160,117,53,.25);
+    }
+
+    .tagline {
+      font-size: clamp(15px, 2vw, 19px);
+      color: var(--parchment);
+      opacity: .65;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 36px 0;
+      width: 100%;
+      max-width: 480px;
+    }
+    .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--bronze), transparent); }
+    .divider-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--bronze-light); flex-shrink: 0; }
+
+    /* ── ABOUT ── */
+    .about {
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+    .about p {
+      font-size: clamp(16px, 2vw, 18px);
+      line-height: 1.8;
+      color: var(--parchment);
+      opacity: .82;
+      margin-bottom: 12px;
+    }
+    .about strong { color: var(--bronze-bright); font-weight: 500; }
+
+    /* ── PILLARS ── */
+    .pillars {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 680px;
+      margin-bottom: 44px;
+    }
+
+    .pillar {
+      background: linear-gradient(160deg, #243d22, #172a15);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--bronze);
+      border-radius: 0 0 8px 8px;
+      padding: 16px 18px;
+      flex: 1 1 140px;
+      max-width: 180px;
+      text-align: center;
+      transition: border-top-color .2s, transform .2s;
+    }
+    .pillar:hover { border-top-color: var(--bronze-bright); transform: translateY(-3px); }
+
+    .pillar-ico { font-size: 20px; margin-bottom: 7px; }
+    .pillar-name {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bronze-light);
+      margin-bottom: 5px;
+    }
+    .pillar-desc { font-size: 12.5px; color: var(--parchment); opacity: .65; line-height: 1.5; }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      align-items: center;
+      justify-items: center;
+      margin-bottom: 48px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, #1a2f18, #152513);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      max-width: 620px;
+      width: 100%;
+      gap: 0 20px;
+    }
+
+    .stat { text-align: center; }
+    .stat-value {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--bronze-bright);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--parchment-dim);
+    }
+    .stat-sep { width: 1px; height: 36px; background: var(--border); }
+
+    /* ── CTA ── */
+    .cta-wrap {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 52px;
+    }
+
+    .btn {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #a07535, #c9a04a);
+      color: #0e1a0d;
+      font-weight: 700;
+      border: 1px solid var(--bronze-bright);
+      box-shadow: 0 2px 16px rgba(160,117,53,.2);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #c9a04a, #e6c060);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(160,117,53,.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--bronze-light);
+      border: 1px solid rgba(160,117,53,.4);
+    }
+    .btn-secondary:hover {
+      border-color: var(--bronze-light);
+      background: rgba(160,117,53,.08);
+      transform: translateY(-2px);
+    }
+
+    /* ── MOTTO ── */
+    .motto-section {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      text-align: center;
+      max-width: 400px;
+    }
+    .motto {
+      font-style: italic;
+      font-size: clamp(14px, 2vw, 17px);
+      color: var(--bronze-light);
+      opacity: .8;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .motto-trans {
+      font-size: 11px;
+      color: var(--parchment);
+      opacity: .35;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .stat-sep { display: none; }
+      .pillar { max-width: 100%; }
+      .hero::after { inset: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="hero">
+
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Sigillo della Confraternita dei Mastri">
+  </div>
+
+  <div class="eyebrow">Pax Dei Italia · Gilda Italiana · Server Tyr · Kerys, Retz</div>
+  <h1>Confraternita<br>dei Mastri</h1>
+  <p class="tagline">La gilda italiana più importante sul Server Tyr di Pax Dei.</p>
+
+  <div class="cta-wrap" style="margin: 28px 0 0;">
+    <a href="https://discord.gg/2dG5DbZda" target="_blank" rel="noopener" class="btn btn-primary">Unisciti su Discord</a>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="about">
+    <p>Siamo la fratellanza italiana di Pax Dei nata per durare. Non una gilda che cresce per il gusto di crescere, un clan italiano affiatato che mette <strong>coesione, rispetto e divertimento</strong> al primo posto.</p>
+    <p>Il nostro villaggio è <strong>Roccamastra</strong>, a Retz nella Provincia di Kerys, Server Tyr. Deteniamo <strong>Camlan</strong>, il nostro Feudal Shrine a Lyonesse. Cerchiamo giocatori italiani attivi per PvP, PvE, costruzione e crafting.</p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-ico">⚔️</div><div class="pillar-name">PvP</div><div class="pillar-desc">Battaglie a Lyonesse e difesa di Camlan.</div></div>
+    <div class="pillar"><div class="pillar-ico">🏰</div><div class="pillar-name">PvE</div><div class="pillar-desc">Dungeon, campetti e crescita del personaggio.</div></div>
+    <div class="pillar"><div class="pillar-ico">🔨</div><div class="pillar-name">Costruzione</div><div class="pillar-desc">Roccamastra, Shrine e strutture comuni.</div></div>
+    <div class="pillar"><div class="pillar-ico">⚗️</div><div class="pillar-name">Crafting</div><div class="pillar-desc">Armi, armature e risorse per la gilda.</div></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-value">Tyr</div><div class="stat-label">Server</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-value">🇮🇹</div><div class="stat-label">Gilda italiana</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-value">Camlan</div><div class="stat-label">Feudal Shrine</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-value">Kerys, Retz</div><div class="stat-label">Dove ci trovi</div></div>
+  </div>
+
+  <div class="motto-section">
+    <div class="motto">Exules Eligimus Eximus.</div>
+    <div class="motto-trans">Esuli. Per scelta. Capaci di superare ciò che era prima.</div>
+  </div>
+
+</main>
+<footer style="text-align:center; padding:20px; font-family:'EB Garamond',serif; font-size:12px; color:rgba(232,217,181,.25); position:relative; z-index:1;">
+  Confraternita dei Mastri · Gilda Italiana Pax Dei · Clan Italiano Server Tyr · Pax Dei Italia
+</footer>
+
+</body>
+</html>
