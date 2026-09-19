@@ -1,0 +1,31 @@
+name: Aggiorna news ArcheAge Chronicles
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del sito
+        uses: actions/checkout@v4
+
+      - name: Scarica le news da Steam e aggiorna la pagina
+        run: node scripts/fetch-archeage-news.js
+
+      - name: Committa la pagina se ci sono novita'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add archeage/index.html
+          if git diff --cached --quiet; then
+            echo "Nessuna novita', niente da committare."
+          else
+            git commit -m "Aggiorna news ArcheAge Chronicles da Steam"
+            git push
+          fi
